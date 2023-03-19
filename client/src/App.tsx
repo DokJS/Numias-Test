@@ -1,13 +1,14 @@
 import React, { useState } from 'react'
+import Button from 'react-bootstrap/Button'
+import Form from 'react-bootstrap/Form'
+
 import { Navigate } from 'react-router-dom'
 import { useAppDispatch, useAppSelector } from './redux/hook'
 import { login } from './redux/slices/authSlice'
-import { useNavigate } from 'react-router-dom'
 
 function App() {
     const [username, setUsername] = useState('bob')
     const [password, setPassword] = useState('abc123')
-    const navigate = useNavigate()
     const dispatch = useAppDispatch()
     const isAuth = useAppSelector((state) => state.auth.isAuth)
     const isLoading = useAppSelector((state) => state.auth.isLoading)
@@ -34,33 +35,30 @@ function App() {
     }
 
     return (
-        <div>
-            <h1>My Wallet</h1>
-            <h2>Login</h2>
-            <form onSubmit={handleSubmit}>
-                <label>
-                    Username:
-                    <input
+        <main className="App">
+            <Form className="Form" onSubmit={handleSubmit}>
+                <Form.Group className="mb-3" controlId="formBasicEmail">
+                    <Form.Label>Username :</Form.Label>
+                    <Form.Control
                         type="text"
-                        value={username}
-                        onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
-                            setUsername(e.target.value)
-                        }
+                        placeholder="Enter username"
+                        onChange={(event) => setUsername(event.target.value)}
                     />
-                </label>
-                <label>
-                    Password
-                    <input
+                </Form.Group>
+
+                <Form.Group className="mb-3" controlId="formBasicPassword">
+                    <Form.Label>Password :</Form.Label>
+                    <Form.Control
                         type="password"
-                        value={password}
-                        onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
-                            setPassword(e.target.value)
-                        }
+                        placeholder="Password"
+                        onChange={(event) => setPassword(event.target.value)}
                     />
-                </label>
-                <button type="submit">Send</button>
-            </form>
-        </div>
+                </Form.Group>
+                <Button variant="primary" type="submit">
+                    Submit
+                </Button>
+            </Form>
+        </main>
     )
 }
 

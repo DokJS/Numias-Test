@@ -10,6 +10,7 @@ import ProtectedRoute from './Components/ProtectedRoute'
 import store from './redux/store'
 import { Provider } from 'react-redux'
 import reportWebVitals from './reportWebVitals'
+import './index.css'
 
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement)
 root.render(
