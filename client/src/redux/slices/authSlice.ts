@@ -5,12 +5,14 @@ interface InitialState {
     isLoading: boolean
     isError: boolean
     accessToken: string
+    headerIsShown: boolean
 }
 const initialState: InitialState = {
     isAuth: false,
     isLoading: false,
     isError: false,
     accessToken: '',
+    headerIsShown: false,
 }
 type User = {
     username: string
@@ -34,7 +36,11 @@ export const login = createAsyncThunk(
 const authSlice = createSlice({
     name: 'auth',
     initialState,
-    reducers: {},
+    reducers: {
+        displayHeader: (state) => {
+            state.headerIsShown = true
+        },
+    },
     extraReducers: (builder) => {
         builder.addCase(login.pending, (state) => {
             state.isLoading = true
@@ -50,5 +56,5 @@ const authSlice = createSlice({
         })
     },
 })
-
+export const { displayHeader } = authSlice.actions
 export default authSlice.reducer
