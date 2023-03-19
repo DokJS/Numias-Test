@@ -21,6 +21,7 @@ export default function Header() {
                     icon={faPowerOff}
                     className="icon"
                     onClick={handleClick}
+                    data-testid="logout"
                 />
             </header>
         )
