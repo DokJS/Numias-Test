@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
-import { useAppDispatch } from './redux/hook'
+import { Navigate } from 'react-router-dom'
+import { useAppDispatch, useAppSelector } from './redux/hook'
 import { login } from './redux/slices/authSlice'
 import { useNavigate } from 'react-router-dom'
 
@@ -8,12 +9,28 @@ function App() {
     const [password, setPassword] = useState('abc123')
     const navigate = useNavigate()
     const dispatch = useAppDispatch()
+    const isAuth = useAppSelector((state) => state.auth.isAuth)
+    const isLoading = useAppSelector((state) => state.auth.isLoading)
+    const isError = useAppSelector((state) => state.auth.isError)
+
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault()
         dispatch(login({ username, password }))
-        setTimeout(() => {
-            navigate('/wallet')
-        }, 2000)
+    }
+
+    if (isLoading) return <div>Loading...</div>
+    if (isError) {
+        console.error(console.error)
+
+        return (
+            <div>
+                <h1>There is an Error</h1>
+            </div>
+        )
+    }
+
+    if (isAuth) {
+        return <Navigate to="wallet" />
     }
 
     return (
