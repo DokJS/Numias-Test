@@ -19,8 +19,22 @@ root.render(
                 <Header />
                 <Routes>
                     <Route path="/" element={<App />} />
-                    <Route path="/wallet" element={<Wallet />} />
-                    <Route path="/history/:assetName" element={<History />} />
+                    <Route
+                        path="/wallet"
+                        element={
+                            <ProtectedRoute>
+                                <Wallet />
+                            </ProtectedRoute>
+                        }
+                    />
+                    <Route
+                        path="/history/:assetName"
+                        element={
+                            <ProtectedRoute>
+                                <History />
+                            </ProtectedRoute>
+                        }
+                    />
                     <Route path="*" element={<NotFound />} />
                 </Routes>
             </BrowserRouter>
