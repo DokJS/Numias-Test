@@ -1,5 +1,6 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit'
 import { API_HOST, apiEndpoint, getUrl } from '../../util/api'
+import { User } from '../../model/type'
 interface InitialState {
     isAuth: boolean
     isLoading: boolean
@@ -14,10 +15,7 @@ const initialState: InitialState = {
     accessToken: '',
     headerIsShown: false,
 }
-type User = {
-    username: string
-    password: string
-}
+
 export const login = createAsyncThunk(
     'auth/login',
     async (data: User, thunkAPI) => {

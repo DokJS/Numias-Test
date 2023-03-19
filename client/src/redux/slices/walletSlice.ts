@@ -1,7 +1,8 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit'
 import { getUrl, apiEndpoint, API_HOST } from '../../util/api'
+import { Crypto } from '../../model/interfaces'
 interface InitialState {
-    wallet: []
+    wallet: Crypto[]
     isLoading: boolean
     error: boolean
 }

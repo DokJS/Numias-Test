@@ -1,7 +1,9 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit'
 import { API_HOST, apiEndpoint, getUrl } from '../../util/api'
+import { Transaction } from '../../model/interfaces'
+import { Credential } from '../../model/type'
 interface InitialState {
-    detailsTransaction: []
+    detailsTransaction: Transaction[]
     isLoading: boolean
     error: boolean
 }
@@ -10,7 +12,7 @@ const initialState: InitialState = {
     isLoading: false,
     error: false,
 }
-type Credential = { token: string; assetName: string }
+
 export const fetchDetailsTransaction = createAsyncThunk(
     'detailsTransaction',
     async (arg: Credential, thunkAPI) => {
