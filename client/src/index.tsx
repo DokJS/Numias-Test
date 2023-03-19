@@ -20,7 +20,7 @@ root.render(
                 <Routes>
                     <Route path="/" element={<App />} />
                     <Route path="/wallet" element={<Wallet />} />
-                    <Route path="/history" element={<History />} />
+                    <Route path="/history/:assetName" element={<History />} />
                     <Route path="*" element={<NotFound />} />
                 </Routes>
             </BrowserRouter>
