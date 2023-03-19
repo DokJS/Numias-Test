@@ -40,6 +40,13 @@ const authSlice = createSlice({
         displayHeader: (state) => {
             state.headerIsShown = true
         },
+        logout: (state) => {
+            state.isAuth = false
+            state.accessToken = ''
+            state.headerIsShown = false
+            state.isLoading = false
+            state.isError = false
+        },
     },
     extraReducers: (builder) => {
         builder.addCase(login.pending, (state) => {
@@ -56,5 +63,5 @@ const authSlice = createSlice({
         })
     },
 })
-export const { displayHeader } = authSlice.actions
+export const { displayHeader, logout } = authSlice.actions
 export default authSlice.reducer
