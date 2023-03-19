@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react'
 import { Link } from 'react-router-dom'
+import CurrencyList from './CurrencyList'
 import { useAppDispatch, useAppSelector } from '../redux/hook'
 import { fetchWallet } from '../redux/slices/walletSlice'
 import { displayHeader } from '../redux/slices/authSlice'
@@ -26,9 +27,9 @@ export default function Wallet() {
         )
     }
     return (
-        <div>
-            <h1>Wallet</h1>
-            <Link to={`/history/btc`}>btc</Link>
-        </div>
+        <main className="Wallet">
+            <h1>Your Wallet</h1>
+            <CurrencyList />
+        </main>
     )
 }

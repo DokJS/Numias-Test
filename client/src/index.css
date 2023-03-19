@@ -22,3 +22,51 @@ body {
     gap: 30px;
     font-size: 1rem;
 }
+.Wallet {
+    background-color: black;
+    height: 100vh;
+    color: white;
+    padding: 40px;
+}
+/* table */
+.tableContainer {
+    overflow-x: 'auto';
+}
+
+.table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.table td,
+.table th {
+    border: 0.5px solid white;
+    padding: 15px;
+}
+
+.table th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    text-transform: uppercase;
+}
+
+.btnInfo {
+    background-color: #308ec7;
+    border: 2px solid #308ec7;
+    color: white;
+    text-transform: uppercase;
+    border-radius: 4px;
+    cursor: pointer;
+    margin: 0;
+    padding: 9px;
+    width: 100%;
+    font-size: 15px;
+}
+
+.btnInfo:hover {
+    background-color: var(--red-color);
+    border: 2px solid var(--red-color);
+    color: var(--white-color);
+}
+/* table */
