@@ -8,6 +8,7 @@ export default function Wallet() {
     console.log(token)
     useEffect(() => {
         dispatch(fetchWallet(token)) //For fetch wallet data
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
     return (
         <div>
