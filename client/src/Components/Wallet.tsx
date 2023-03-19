@@ -1,5 +1,4 @@
-import React, { useEffect } from 'react'
-import { Link } from 'react-router-dom'
+import { useEffect } from 'react'
 import CurrencyList from './CurrencyList'
 import { useAppDispatch, useAppSelector } from '../redux/hook'
 import { fetchWallet } from '../redux/slices/walletSlice'

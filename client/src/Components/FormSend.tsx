@@ -101,6 +101,7 @@ export default function FormSend({ assetName }: FormSendProps) {
                     <input
                         type="text"
                         value={destination}
+                        placeholder="bc1qxy2kgdygjrsqtzq2n0yrf2493p83kkfjhx0wlh"
                         className="input"
                         onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
                             setDestination(e.target.value)
@@ -112,6 +113,7 @@ export default function FormSend({ assetName }: FormSendProps) {
                     <input
                         type="text"
                         value={amount}
+                        placeholder="0.1"
                         className="input"
                         onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
                             setAmount(e.target.value)
