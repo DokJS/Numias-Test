@@ -88,3 +88,41 @@ header {
     color: red;
 }
 /* Header */
+
+/* History */
+.History {
+    background-color: black;
+    height: 100vh;
+    color: white;
+    padding: 40px;
+}
+.History h1 {
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 26px;
+    margin-bottom: 30px;
+}
+/* History */
+
+/* FormSend */
+
+.FormSend {
+    height: 20px;
+    color: white;
+    padding: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    margin-bottom: 30px;
+}
+
+.FormSend input {
+    height: 30px;
+    border: 1px solid white;
+    border-radius: 4px;
+    padding: 0 10px;
+    margin: 0 10px;
+}
+
+/* FormSend */

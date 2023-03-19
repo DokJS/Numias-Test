@@ -94,32 +94,32 @@ export default function FormSend({ assetName }: FormSendProps) {
         }
     }
     return (
-        <div>
-            <div>
-                <form onSubmit={handleSubmit}>
-                    <label>
-                        address:
-                        <input
-                            type="text"
-                            value={destination}
-                            onChange={(
-                                e: React.ChangeEvent<HTMLInputElement>
-                            ) => setDestination(e.target.value)}
-                        />
-                    </label>
-                    <label>
-                        amount:
-                        <input
-                            type="text"
-                            value={amount}
-                            onChange={(
-                                e: React.ChangeEvent<HTMLInputElement>
-                            ) => setAmount(e.target.value)}
-                        />
-                    </label>
-                    <button type="submit">Send</button>
-                </form>
-            </div>
-        </div>
+        <main className="FormSend">
+            <form onSubmit={handleSubmit}>
+                <label>
+                    Destination:
+                    <input
+                        type="text"
+                        value={destination}
+                        className="input"
+                        onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
+                            setDestination(e.target.value)
+                        }
+                    />
+                </label>
+                <label style={{ marginLeft: 40 }}>
+                    Amount:
+                    <input
+                        type="text"
+                        value={amount}
+                        className="input"
+                        onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
+                            setAmount(e.target.value)
+                        }
+                    />
+                </label>
+                <button type="submit">Send</button>
+            </form>
+        </main>
     )
 }

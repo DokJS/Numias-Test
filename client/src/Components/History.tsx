@@ -31,10 +31,10 @@ export default function History() {
         )
     }
     return (
-        <div>
-            <h1>Transactions Details</h1>
+        <main className="History">
+            <h1>Payout Form</h1>
             <FormSend assetName={assetName as string} />
             <TransactionList />
-        </div>
+        </main>
     )
 }
