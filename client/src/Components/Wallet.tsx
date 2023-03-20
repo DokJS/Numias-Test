@@ -18,7 +18,6 @@ export default function Wallet() {
         return <div>Loading...</div>
     }
     if (error) {
-        console.error(error)
         return (
             <div>
                 <h1>There is an Error</h1>

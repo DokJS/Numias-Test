@@ -32,7 +32,7 @@ export default function History() {
     }
     return (
         <main className="History">
-            <h1>Payout Form</h1>
+            <h1>{assetName} Payout Form</h1>
             <FormSend assetName={assetName as string} />
             <TransactionList />
         </main>
